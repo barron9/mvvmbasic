@@ -8,6 +8,8 @@ import android.util.Log
 import r1p.net.myapplication.R
 import r1p.net.myapplication.viewmodel.mainViewModel
 
+//USER INTERFACE
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var viewModel: mainViewModel
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         viewModel = ViewModelProviders.of(this).get(mainViewModel::class.java)
 
         viewModel.postData.observe(this, Observer { postData ->

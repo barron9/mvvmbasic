@@ -9,6 +9,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+//PRESENTATION LOGIC
+
 class mainViewModel : ViewModel() {
     val api = NetworkConfiguration.getPlaceholderApi()
 
