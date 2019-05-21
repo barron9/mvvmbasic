@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.net.Uri
 import android.os.Bundle
+import android.support.v4.view.PagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,10 +20,17 @@ class MainActivity : AppCompatActivity(), BlankFragment.OnFragmentInteractionLis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initTabs()
+        bringData()
 
-        vp?.adapter = Pageradapter(supportFragmentManager)
+    }
+
+    private fun initTabs() {
+        vp?.adapter = Pageradapter(supportFragmentManager) as PagerAdapter
         tabs.setupWithViewPager(vp)
+    }
 
+    private fun bringData() {
         // vp.setCurrentItem(0)
         viewModel = ViewModelProviders.of(this).get(mainViewModel::class.java)
 

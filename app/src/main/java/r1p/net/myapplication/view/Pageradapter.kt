@@ -8,7 +8,7 @@ class Pageradapter internal constructor(fa: FragmentManager) : FragmentPagerAdap
 
 
     override fun getItem(p0: Int): Fragment? {
-        var fragment: Fragment? = null
+         var fragment: Fragment? = null
         when (p0) {
             0 -> fragment = BlankFragment()
             1 -> fragment = BlankFragment()
